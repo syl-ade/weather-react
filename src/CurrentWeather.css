@@ -1,0 +1,41 @@
+.CurrentWeather {
+  margin-top: 10px;
+}
+.fa-sun {
+  font-size: 50px;
+  color: rgb(234, 219, 204);
+  position: relative;
+  left: 40px;
+  top: 30px;
+}
+#temperature {
+  font-size: 60px;
+  text-align: center;
+}
+
+#units {
+  font-size: 19px;
+  font-weight: bold;
+  position: relative;
+  top: -28px;
+}
+#max-min {
+  max-width: 100px;
+  text-align: center;
+  font-size: 11px;
+}
+#parameters {
+  font-size: 13px;
+  margin-top: 15px;
+  position: relative;
+  bottom: -45px;
+}
+#details {
+  position: relative;
+  left: 10px;
+}
+
+#current-location {
+  font-size: 27px;
+  text-align: center;
+}
