@@ -1,5 +1,6 @@
 import React from "react";
 import "./CurrentWeather.css";
+import { Sun } from "@dcp-ui/icons.sun";
 
 export default function CurrentWeather() {
   return (
@@ -51,7 +52,7 @@ export default function CurrentWeather() {
           </div>
         </div>
         <div className="col">
-          <i className="fas fa-sun"></i>
+          <Sun />
         </div>
       </div>
     </div>
