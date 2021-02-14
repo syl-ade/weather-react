@@ -1,40 +1,36 @@
 form {
   display: inline;
 }
-.submit {
+.text {
+  height: 38px;
   color: rgb(53, 53, 53);
-  max-width: 150px;
-  min-height: 30px;
-  max-height: 38px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 0 20px;
+  margin: 5px 10px;
+}
+.submit {
+  height: 38px;
+  padding: 0 20px;
+
+  color: rgb(53, 53, 53);
   font-size: 11px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   background-color: #dad2cf;
-  margin: 10px;
-}
-.text {
-  color: rgb(53, 53, 53);
-  min-width: 100px;
-  max-width: 500px;
-  min-height: 30px;
-  max-height: 38px;
-  border: none;
-  border-radius: 8px;
-  font-size: 12px;
-  padding: 0 20px;
+  margin: 5px 10px;
 }
 
 #current-button {
-  min-width: 50px;
-  max-width: 70px;
-
-  min-height: 30px;
-  max-height: 38px;
+  width: 90px;
+  height: 38px;
+  padding: 0 20px;
   font-size: 11px;
   font-weight: bold;
   border: none;
   border-radius: 8px;
   background-color: #dad2cf;
-  margin-left: 20px;
+  margin: 5px 50px;
 }

@@ -28,7 +28,7 @@ export default function CurrentWeather() {
       <div className="CurrentWeather">
         <div className="row">
           <div className="col" id="left-col">
-            <div>
+            <div id="current-date">
               <FormattedDate date={weatherData.date} />
             </div>
             <div id="current-time">

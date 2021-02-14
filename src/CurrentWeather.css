@@ -25,22 +25,26 @@
   top: -28px;
 }
 #max-min {
-  max-width: 100px;
   text-align: center;
   font-size: 11px;
 }
 #parameters {
   font-size: 13px;
-  margin-top: 15px;
-  position: relative;
-  bottom: -45px;
+  margin-top: 35px;
+  margin-left: 10px;
 }
 #details {
-  position: relative;
-  left: 10px;
 }
 
 #current-location {
   font-size: 27px;
   text-align: center;
+}
+
+#current-time {
+  margin-left: 10px;
+}
+
+#current-date {
+  margin-left: 10px;
 }
