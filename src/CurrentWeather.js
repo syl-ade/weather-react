@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CurrentWeather.css";
+import FormattedDate from "./FormattedDate";
+import FormattedTime from "./FormattedTime";
 
 export default function CurrentWeather() {
   let city = "London";
@@ -9,6 +11,7 @@ export default function CurrentWeather() {
     console.log(response.data);
     setWeatherData({
       ready: true,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -17,7 +20,6 @@ export default function CurrentWeather() {
       maxTemp: response.data.main.temp_max,
       minTemp: response.data.main.temp_min,
       description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/{response.data.weather[0].icon}.png`,
     });
   }
 
@@ -26,8 +28,12 @@ export default function CurrentWeather() {
       <div className="CurrentWeather">
         <div className="row">
           <div className="col" id="left-col">
-            <div id="current-date">-- -- -- --</div>
-            <div id="current-time">--:--</div>
+            <div>
+              <FormattedDate date={weatherData.date} />
+            </div>
+            <div id="current-time">
+              <FormattedTime date={weatherData.date} />
+            </div>
             <div id="parameters">
               <div>
                 Humidity: <span id="humidity">{weatherData.humidity}</span>%
