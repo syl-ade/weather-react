@@ -61,10 +61,14 @@ export default function WeatherInfo(props) {
         </div>
 
         <div className="col" id="right-col">
-          <div className="row">
-            <img src={props.data.iconUrl} alt={props.data.description} />
+          <div className="row box">
+            <img
+              src={props.data.iconUrl}
+              alt={props.data.description}
+              id="main-icon"
+            />
           </div>
-          <div className="row">
+          <div className="row box">
             <div className="description">{props.data.description}</div>
           </div>
         </div>

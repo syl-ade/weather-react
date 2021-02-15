@@ -19,6 +19,7 @@ export default function Weather(props) {
       maxTemp: response.data.main.temp_max,
       minTemp: response.data.main.temp_min,
       description: response.data.weather[0].description,
+      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 

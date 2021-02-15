@@ -32,3 +32,8 @@
   font-size: 27px;
   text-align: center;
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+}
