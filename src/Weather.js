@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import "./WeatherInfo.css";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -22,12 +21,13 @@ export default function Weather(props) {
       description: response.data.weather[0].description,
     });
   }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
+
   function updateCity(event) {
-    event.preventDefault();
     setCity(event.target.value);
   }
   function search() {
@@ -40,25 +40,28 @@ export default function Weather(props) {
       <div>
         <div className="Search">
           <div className="row">
-            <form className="Search" onSubmit={handleSubmit}>
-              <div className="col-9">
+            <div className="col-9">
+              <form onSubmit={handleSubmit}>
                 <input
                   type="search"
                   placeholder="Type a location..."
                   className="text"
+                  autofocus="on"
                   onChange={updateCity}
                 />
-              </div>
-              <div className="col-3">
-                <input
-                  type="submit"
-                  value="Check the weather"
-                  className="submit"
-                />
-              </div>
-            </form>
-            <div className="col-3">
-              <button id="current-button">Current</button>
+                <div className="col-3">
+                  <input
+                    type="submit"
+                    value="Check the weather"
+                    className="btn btn-primary w-200"
+                  />
+                </div>
+              </form>
+            </div>
+            <div className="col-2">
+              <button className="btn btn-primary w-150" id="current-button">
+                Current
+              </button>
             </div>
           </div>
         </div>
@@ -67,5 +70,6 @@ export default function Weather(props) {
     );
   } else {
     search();
+    return "Loading...";
   }
 }

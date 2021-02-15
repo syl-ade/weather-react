@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
   return (
@@ -46,11 +47,15 @@ export default function WeatherInfo(props) {
           <div className="row" id="max-min">
             <div className="col max-min">
               max: <span id="max-temp">{Math.round(props.data.maxTemp)}</span>
-              <span className="unit" id="unit-max"></span>
+              <span className="unit" id="unit-max">
+                °C
+              </span>
             </div>
             <div className="col max-min">
               min: <span id="min-temp">{Math.round(props.data.minTemp)}</span>
-              <span className="unit" id="unit-min"></span>
+              <span className="unit" id="unit-min">
+                °C
+              </span>
             </div>
           </div>
         </div>
