@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function FormattedTime(props) {
-  let hours = props.date.getHours();
-  let minutes = props.date.getMinutes();
+  let hours = props.getHours();
+  let minutes = props.getMinutes();
   if (hours < 10) {
     hours = `0${hours}`;
   }

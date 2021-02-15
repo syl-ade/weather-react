@@ -8,7 +8,6 @@ form {
   border-radius: 8px;
   font-size: 13px;
   padding: 0 20px;
-  margin: 5px 10px;
 }
 .submit {
   height: 38px;
@@ -20,7 +19,6 @@ form {
   border: none;
   border-radius: 8px;
   background-color: #dad2cf;
-  margin: 5px 10px;
 }
 
 #current-button {
@@ -32,5 +30,4 @@ form {
   border: none;
   border-radius: 8px;
   background-color: #dad2cf;
-  margin: 5px 50px;
 }
