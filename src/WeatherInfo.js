@@ -1,6 +1,5 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
-import FormattedTime from "./FormattedTime";
 
 export default function WeatherInfo(props) {
   return (
@@ -10,9 +9,7 @@ export default function WeatherInfo(props) {
           <div id="current-date">
             <FormattedDate date={props.data.date} />
           </div>
-          <div id="current-time">
-            <FormattedTime date={props.data.date} />
-          </div>
+
           <div id="parameters">
             <div>
               Humidity: <span id="humidity">{props.data.humidity}</span>%

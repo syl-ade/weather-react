@@ -9,7 +9,6 @@ export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -28,8 +27,8 @@ export default function Weather(props) {
     search();
   }
   function updateCity(event) {
-    setCity(event.target.value);
     event.preventDefault();
+    setCity(event.target.value);
   }
   function search() {
     let apiKey = "b40b1170719118f550e945ff17d55d7a";
@@ -63,7 +62,7 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
-        <WeatherInfo props={weatherData} />
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
