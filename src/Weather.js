@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import Currently from "./Currently";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -62,9 +63,7 @@ export default function Weather(props) {
               </form>
             </div>
             <div className="col-4">
-              <button className="btn btn-primary w-150" id="current-button">
-                Currently here
-              </button>
+              <Currently />
             </div>
           </div>
         </div>

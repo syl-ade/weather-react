@@ -1,15 +1,6 @@
-form {
-  display: inline-flex;
-  margin-bottom: 30px;
-}
-
-.text {
-  height: 38px;
-  color: rgb(53, 53, 53);
-  border: none;
-  border-radius: 0.25rem;
-  font-size: 13px;
-  padding: 0 20px;
+.col-4 {
+  display: flex;
+  justify-content: center;
 }
 .btn.btn-primary {
   height: 38px;
@@ -21,4 +12,7 @@ form {
   border: none;
   border-radius: 0.25rem;
   background-color: #dad2cf;
+}
+#current-button {
+  width: 120px;
 }
