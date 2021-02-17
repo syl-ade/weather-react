@@ -1,27 +1,18 @@
 .description {
   height: 20px;
   color: rgb(66, 27, 45);
+  font-size: 15px;
 }
 
 .CurrentWeather {
   margin-top: 10px;
 }
 
-#temperature {
-  font-size: 60px;
-  text-align: center;
+.box {
+  display: flex;
+  justify-content: center;
 }
 
-#units {
-  font-size: 19px;
-  font-weight: bold;
-  position: relative;
-  top: -28px;
-}
-#max-min {
-  text-align: center;
-  font-size: 15px;
-}
 #parameters {
   font-size: 15px;
   margin-top: 14px;
@@ -29,11 +20,13 @@
 }
 
 #current-location {
+  padding-top: 0;
   font-size: 27px;
   text-align: center;
+  position: relative;
+  top: -7px;
 }
 
-.box {
-  display: flex;
-  justify-content: center;
+#main-icon {
+  width: 130px;
 }

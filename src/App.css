@@ -1,11 +1,13 @@
 .App {
-  margin: 30px auto;
+  margin: 30px auto 15px;
   padding: 30px 50px;
   max-width: 700px;
   max-height: 1400px;
   border-radius: 20px;
   color: rgb(66, 27, 45);
+
   font-family: "Maven Pro", sans-serif;
+
   background-color: rgba(255, 255, 255, 0.2);
 }
 

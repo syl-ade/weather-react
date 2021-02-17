@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import "./WeatherInfo.css";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -28,36 +29,7 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col" id="middle-col">
           <div id="current-location">{props.data.city}</div>
-          <div id="temperature">
-            <span id="current-temperature">
-              {Math.round(props.data.temperature)}
-            </span>
-            <span id="units">
-              <a href="#" className="active" id="celsius-link">
-                {" "}
-                °C{" "}
-              </a>
-              |
-              <a href="#" className="active" id="farenheit-link">
-                {" "}
-                °F{" "}
-              </a>
-            </span>
-          </div>
-          <div className="row" id="max-min">
-            <div className="col max-min">
-              max: <span id="max-temp">{Math.round(props.data.maxTemp)}</span>
-              <span className="unit" id="unit-max">
-                °C
-              </span>
-            </div>
-            <div className="col max-min">
-              min: <span id="min-temp">{Math.round(props.data.minTemp)}</span>
-              <span className="unit" id="unit-min">
-                °C
-              </span>
-            </div>
-          </div>
+          <WeatherTemperature celsius={props.data} />
         </div>
 
         <div className="col" id="right-col">

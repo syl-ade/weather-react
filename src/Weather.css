@@ -1,6 +1,6 @@
 form {
   display: inline-flex;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .text {
@@ -11,12 +11,12 @@ form {
   font-size: 13px;
   padding: 0 20px;
 }
-.submit {
+.btn.btn-primary {
   height: 38px;
-  padding: 0 20px;
-
+  width: 180px;
+  padding: 0 15px;
   color: rgb(53, 53, 53);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
   border: none;
   border-radius: 0.25rem;
@@ -24,10 +24,10 @@ form {
 }
 
 #current-button {
-  height: 38px;
-  color: rgb(53, 53, 53);
-  padding: 0 20px;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: #dad2cf;
+  width: 120px;
+}
+
+.col-4 {
+  display: flex;
+  justify-content: center;
 }
