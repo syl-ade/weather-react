@@ -3,15 +3,13 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
-import CurrentlyHere from "./CurrentlyHere";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.defaultCity);
+  let [coords, setCoords] = useState(null);
 
   function handleResponse(response) {
-    console.log();
-
     setWeatherData({
       ready: true,
       date: new Date(response.data.dt * 1000),
@@ -40,6 +38,32 @@ export default function Weather(props) {
   function updateCity(event) {
     setCity(event.target.value);
   }
+
+  function getCoords(event) {
+    event.preventDefault();
+
+    alert(`Coords`);
+  }
+  // function handleCurrentlyResponse(response) {
+  //   console.log(response);
+  //   setCity(response.data.city);
+  // }
+  // function showCoords(position) {
+  //   console.log(position);
+  //   let latitude = position.coords.latitude;
+  //   let longitude = position.coords.longitude;
+  //   let apiKey = "b40b1170719118f550e945ff17d55d7a";
+  //   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  //   axios.get(apiUrl).then(handleCurrentlyResponse);
+  // }
+  // function handleCurrently(event) {
+  //   event.preventDefault();
+
+  //   alert(`Currently`);
+
+  //   navigator.geolocation.getCurrentPosition(showCoords);
+  // }
+
   if (weatherData.ready) {
     return (
       <div>
@@ -64,7 +88,14 @@ export default function Weather(props) {
               </form>
             </div>
             <div className="col-4">
-              <CurrentlyHere />
+              <button
+                className="btn btn-primary w-150"
+                id="current-button"
+                onCLick={getCoords}
+              >
+                {" "}
+                Currently here
+              </button>
             </div>
           </div>
         </div>
