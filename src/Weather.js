@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import Currently from "./Currently";
+import WeatherForecast from "./WeatherForecast";
+import CurrentlyHere from "./CurrentlyHere";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -22,10 +23,15 @@ export default function Weather(props) {
       maxTemp: response.data.main.temp_max,
       minTemp: response.data.main.temp_min,
       description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
 
+  function search() {
+    let apiKey = "b40b1170719118f550e945ff17d55d7a";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -33,11 +39,6 @@ export default function Weather(props) {
 
   function updateCity(event) {
     setCity(event.target.value);
-  }
-  function search() {
-    let apiKey = "b40b1170719118f550e945ff17d55d7a";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
   }
   if (weatherData.ready) {
     return (
@@ -63,11 +64,12 @@ export default function Weather(props) {
               </form>
             </div>
             <div className="col-4">
-              <Currently />
+              <CurrentlyHere />
             </div>
           </div>
         </div>
         <WeatherInfo data={weatherData} />
+        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
