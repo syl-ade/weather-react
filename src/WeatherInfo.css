@@ -1,3 +1,9 @@
+.WeatherInfo canvas {
+  color: rgb(53, 53, 53);
+  display: block;
+  size: 90px;
+}
+
 .description {
   height: 20px;
   color: rgb(66, 27, 45);

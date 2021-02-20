@@ -1,5 +1,13 @@
-canvas {
+.WeatherForecast canvas {
   color: rgb(53, 53, 53);
   display: block;
-  size: 90px;
+  size: 30px;
+}
+
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast {
+  margin-top: 40px;
 }
