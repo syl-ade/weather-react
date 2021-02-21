@@ -3,7 +3,6 @@ import FormattedDate from "./FormattedDate";
 import "./WeatherInfo.css";
 import WeatherTemperature from "./WeatherTemperature";
 import WeatherIcon from "./WeatherIcon";
-
 export default function WeatherInfo(props) {
   console.log(props.data);
   return (
@@ -13,7 +12,6 @@ export default function WeatherInfo(props) {
           <div id="current-date">
             <FormattedDate date={props.data.date} />
           </div>
-
           <div id="parameters">
             <div>
               Humidity: <span id="humidity">{props.data.humidity}</span>%
@@ -22,7 +20,6 @@ export default function WeatherInfo(props) {
               Wind: <span id="wind">{props.data.wind}</span>
               <span id="wind-unit"> km/h</span>
             </div>
-
             <div>
               Pressure: <span id="pressure">{props.data.pressure}</span>
               <span id="pressure-unit"> hPa</span>
@@ -31,9 +28,12 @@ export default function WeatherInfo(props) {
         </div>
         <div className="col" id="middle-col">
           <div id="current-location">{props.data.city}</div>
-          <WeatherTemperature celsius={props.data} />
+          <WeatherTemperature
+            celsius={props.data}
+            unit={props.unit}
+            setUnit={props.setUnit}
+          />
         </div>
-
         <div className="col" id="right-col">
           <div className="row box">
             <div className="clearfix main-icon">

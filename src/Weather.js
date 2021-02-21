@@ -4,8 +4,9 @@ import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 export default function Weather(props) {
-  let [weatherData, setWeatherData] = useState({ ready: false });
-  let [city, setCity] = useState(props.defaultCity);
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
+  const [unit, setUnit] = useState("celsius");
   function handleResponse(response) {
     console.log();
     setWeatherData({
@@ -79,8 +80,8 @@ export default function Weather(props) {
             </div>
           </div>
         </div>
-        <WeatherInfo data={weatherData} />
-        <WeatherForecast city={weatherData.city} />
+        <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit} />
+        <WeatherForecast city={weatherData.city} unit={unit} />
       </div>
     );
   } else {
